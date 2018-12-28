@@ -6,7 +6,7 @@ import (
 
 	"github.com/deepdive7/ilog"
 )
-
+var l = ilog.NewSimpleDefaultLogger(os.Stdout, 0, "ILOG->", true)
 func TestCallerInfo(t *testing.T) {
 	l := ilog.NewSimpleDefaultLogger(os.Stdout, 1, "gLogger->", true)
 	l.Error("Error")
@@ -24,8 +24,13 @@ func BenchmarkLoggerError(b *testing.B) {
 	}
 }
 
+type P struct {}
+
+func (p *P) ThrowError() {
+	l.Error("Throw error from *P")
+}
+
 func TestILOG(t *testing.T) {
-	l := ilog.NewSimpleDefaultLogger(os.Stdout, 0, "ILOG->", true)
 	info := "INFO"
 	debug := "Debug"
 	warn := "WARN"
@@ -35,6 +40,7 @@ func TestILOG(t *testing.T) {
 	l.Debug(debug)
 	l.Warn(warn)
 	l.Error(err)
+	(&P{}).ThrowError()
 	l.Fatal(fatal)
 }
 

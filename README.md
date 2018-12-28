@@ -1,7 +1,7 @@
 # ilog
 A simple logger.
 
-### Usage
+### Simple Usage
 ```
 func TestILOG(t *testing.T) {
 	l := ilog.NewSimpleDefaultLogger(os.Stdout, 0, "ILOG->", true)
