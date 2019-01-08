@@ -1,23 +1,22 @@
-# ilog
-A simple logger.
+# glog
+## 支持接口
+- SetLevel(lvl Level)
+- SetPrefix(prefix string)
+- WithField(name string, value interface{}) error
+- WithFields(fields map\[string\]interface{}) error
+- AddReceiver(receiver *Receiver)
+- Debug(a ...interface{})
+- Info(a ...interface{})
+- Warn(a ...interface{})
+- Error(a ...interface{})
+- Fatal(a ...interface{})
+- Debugf(format string, a ...interface{})
+- Infof(format string, a ...interface{})
+- Warnf(format string, a ...interface{})
+- Errorf(format string, a ...interface{})
+- Fatalf(format string, a ...interface{})
+- Panic(a ...interface{})
+- Panicf(format string, a ...interface{})
 
-### Simple Usage
-```
-func TestILOG(t *testing.T) {
-	l := ilog.NewSimpleDefaultLogger(os.Stdout, 0, "ILOG->", true)
-	info := "INFO"
-	debug := "Debug"
-	warn := "WARN"
-	err := "ERROR"
-	fatal := "FATAL"
-	l.Info(info)
-	l.Debug(debug)
-	l.Warn(warn)
-	l.Error(err)
-	l.Fatal(fatal)
-}
-```
-
-> Output screenshot
-
-![ilog](./ilog.png)
+## 截图
+![image](./ilog.png)

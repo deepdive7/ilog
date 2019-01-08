@@ -35,13 +35,13 @@ func TestILOG(t *testing.T) {
 	debug := "Debug"
 	warn := "WARN"
 	err := "ERROR"
-	fatal := "FATAL"
+	//fatal := "FATAL"
 	l.Info(info)
 	l.Debug(debug)
 	l.Warn(warn)
 	l.Error(err)
 	(&P{}).ThrowError()
-	l.Fatal(fatal)
+	//l.Fatal(fatal)
 }
 
 /*
