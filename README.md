@@ -1,4 +1,4 @@
-# llog
+# ilog
 ## 支持接口
 - SetLevel(lvl Level)
 - Deeper(delta int)
