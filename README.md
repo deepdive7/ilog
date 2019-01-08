@@ -1,6 +1,7 @@
-# glog
+# llog
 ## 支持接口
 - SetLevel(lvl Level)
+- Deeper(delta int)
 - SetPrefix(prefix string)
 - WithField(name string, value interface{}) error
 - WithFields(fields map\[string\]interface{}) error
